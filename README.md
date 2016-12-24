@@ -7,7 +7,12 @@ is fundamentally based on node.js and the React view library.
 This brain.dmp frontend will be developed backend agnostic. It 
 communicates with the backend via HTTP REST calls. 
 
-### Run it
+## Documentation
+
+The folder docs/ contains several specification files.
+
+
+## Run it
 
 #### Development
 
