@@ -11,10 +11,11 @@
     "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
     "start": "concurrently --kill-others \"npm run start:devserver\" \"node ./src/server.js\"",
-    "start:devserver": "webpack-dev-server --hot --inline",    
+    "start:devserver": "webpack-dev-server --hot --inline",
     "build:dev": "webpack -d --devtool source-map ./src/main.js ./dist/bundle.js",
     "dist": "WEBPACK_CONFIG='build' webpack -p && cp ./src/server.js ./dist/server.js",
-    "clean-install": "rm -rf node_modules && npm install"
+    "clean-install": "rm -rf node_modules && npm install",
+    "eslint": "./node_modules/.bin/eslint src/"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,8 @@
     "css-loader": "^0.26.1",
     "deep-freeze-node": "^1.1.2",
     "enzyme": "^2.7.0",
+    "eslint": "^3.12.2",
+    "eslint-plugin-react": "^6.8.0",
     "expect": "^1.20.2",
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.9.1",
