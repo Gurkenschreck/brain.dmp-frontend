@@ -3,7 +3,8 @@ var webpack = require('webpack');
 
 var SRC_DIR = path.resolve(__dirname, 'src');
 var DIST_DIR = path.resolve(__dirname, 'dist');
-var PUBLIC_DIST_DIR = path.resolve(DIST_DIR, 'public');
+var DIST_PUBLIC_DIR = path.resolve(DIST_DIR, 'public');
+var DIST_PUBLIC_STATIC_DIR = path.resolve(DIST_PUBLIC_DIR, 'static');
 
 var mode = process.env.WEBPACK_CONFIG;
 
@@ -19,7 +20,7 @@ module.exports = {
 	    SRC_DIR + '/main.js'
     ],
 	output: { 
-		path: PUBLIC_DIST_DIR,
+		path: DIST_PUBLIC_DIR,
 		filename: 'main.js',
 		publicPath: ''
 	},
@@ -44,7 +45,7 @@ module.exports = {
 		port: 4711,
 		inline: true,
         hot: true,
-        contentBase: PUBLIC_DIST_DIR,
+        contentBase: DIST_PUBLIC_DIR,
         stats: 'errors-only'
 	}
 };

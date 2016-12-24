@@ -10,7 +10,8 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
-    "start": "webpack-dev-server --hot --inline",
+    "start": "concurrently --kill-others \"npm run start:devserver\" \"node ./src/server.js\"",
+    "start:devserver": "webpack-dev-server --hot --inline",    
     "build:dev": "webpack -d --devtool source-map ./src/main.js ./dist/bundle.js",
     "dist": "WEBPACK_CONFIG='build' webpack -p && cp ./src/server.js ./dist/server.js",
     "clean-install": "rm -rf node_modules && npm install"
@@ -45,6 +46,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-2": "^6.18.0",
+    "concurrently": "^3.1.0",
     "css-loader": "^0.26.1",
     "deep-freeze-node": "^1.1.2",
     "enzyme": "^2.7.0",
