@@ -1,7 +1,11 @@
 # brain.dmp-frontend
 Frontend for brain.dmp platform.
 
+brain.dmp is a knowledge distribution/notepad platform. This frontend 
+is fundamentally based on node.js and the React view library.
 
+This brain.dmp frontend will be developed backend agnostic. It 
+communicates with the backend via HTTP REST calls. 
 
 ### Run it
 
@@ -10,7 +14,7 @@ Frontend for brain.dmp platform.
 ```
 npm start
 ```
-Runs the node express server.js and webpack-dev-server.
+Runs the node express server.js and webpack-dev-server
 
 ```
 npm test
