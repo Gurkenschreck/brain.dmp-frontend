@@ -19,7 +19,7 @@ The folder docs/ contains several specification files.
 ```
 npm start
 ```
-Runs the node express server.js and webpack-dev-server
+Runs the node express server.js and webpack-dev-server. For development, use localhost:4711.
 
 ```
 npm test
@@ -31,4 +31,6 @@ Runs mocha tests found in test/
 ```
 npm run dist
 ```
-Webpacks the src code and copies the server.js to dist dir
+Webpacks the src code and copies the server.js to dist dir.
+
+Then start server.js, it will listen on port 4712.
