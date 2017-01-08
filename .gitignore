@@ -1,3 +1,7 @@
+# Build
+dist/public/main.js
+dist/public/main.js.map
+
 # Logs
 logs
 *.log
