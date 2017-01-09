@@ -13,8 +13,7 @@ app.get('/api/v1/', function(req, res) {
     res.send('Simple Server!');
 });
 
-
-var port = 4712;
+var port = process.env.PORT || 4712;
 app.listen(port, function() {
     console.log('Listening on port ' + port);
 });
