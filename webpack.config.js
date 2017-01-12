@@ -20,7 +20,7 @@ module.exports = {
 	    SRC_DIR + '/main.js'
     ],
 	output: { 
-		path: DIST_PUBLIC_DIR,
+		path: DIST_PUBLIC_STATIC_DIR,
 		filename: 'main.js',
 		publicPath: ''
 	},
