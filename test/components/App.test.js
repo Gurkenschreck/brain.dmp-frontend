@@ -5,6 +5,6 @@ describe('<App /> component', () => {
         const enzymeWrapper = shallow(<App />);
         expect(
             enzymeWrapper.find('div').text()
-        ).toEqual('Helloood');
+        ).toEqual('Hellooo');
     })
-})
+});
