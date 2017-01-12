@@ -45,6 +45,7 @@ module.exports = {
 		port: 4711,
 		inline: true,
         hot: true,
+		publicPath: '/static/',
         contentBase: DIST_PUBLIC_DIR,
         stats: 'errors-only'
 	}
