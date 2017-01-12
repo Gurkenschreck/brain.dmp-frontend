@@ -1,4 +1,5 @@
 # Build
+dist/server.js
 dist/public/main.js
 dist/public/main.js.map
 dist/public/static/main.js
