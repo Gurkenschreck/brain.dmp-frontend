@@ -33,4 +33,5 @@ npm run dist
 ```
 Webpacks the src code and copies the server.js to dist dir.
 
-Then start server.js, it will listen on port 4712.
+Then start server.js, it will listen on port 4712 (by default).
+server.js needs express and body-parser
