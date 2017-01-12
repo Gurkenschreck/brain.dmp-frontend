@@ -35,3 +35,12 @@ Webpacks the src code and copies the server.js to dist dir.
 
 Then start server.js, it will listen on port 4712 (by default).
 server.js needs express and body-parser
+
+### Environment variables
+
+The server.js can be run using several environment variables.
+
+Command | Purpose
+--- | ---
+APIBASEURI | The uri of the REST web api service to talk to.
+PORT | The port to run on.
