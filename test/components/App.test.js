@@ -2,10 +2,10 @@ import App from './../../src/components/App';
 
 describe('<App /> component', () => {
     it('should display correctly', () => {
-        const enzymeWrapper = shallow(<App />);
+        const enzymeWrapper = render(<App />);
         expect(
             enzymeWrapper.find('header').text()
-        ).toEqual('Some header with nav bar');
+        ).toEqual('StartDumpsQuestionsAccount');
         expect(
             enzymeWrapper.find('main').text()
         ).toEqual('Hellooo');

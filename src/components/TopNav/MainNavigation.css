@@ -1,0 +1,21 @@
+.mainheader {
+    width: 100%;
+}
+
+.mainheader__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mainheader__item {
+    display: inline;
+}
+
+.mainheader__item:hover {
+    background-color: rgba(0, 0, 0, 0.05)
+}
+
+.mainheader__item--active {
+    background-color: #4CAF50;
+}

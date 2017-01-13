@@ -47,6 +47,9 @@ module.exports = {
         hot: true,
 		publicPath: '/static/',
         contentBase: DIST_PUBLIC_DIR,
-        stats: 'errors-only'
+        stats: 'errors-only',
+		historyApiFallback: {
+			index: 'index.html'
+		}
 	}
 };

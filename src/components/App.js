@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
+import MainNavigation from './TopNav/MainNavigation.js';
+
 class App extends Component {
     render() {
         return (
-            <div>
-                <header>
-                    Some header with nav bar
-                </header>
+            <div style={{padding:0, margin:0}}>
+                <MainNavigation />
                 <main>
                     Hellooo
                 </main>
