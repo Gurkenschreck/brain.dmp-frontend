@@ -24,20 +24,22 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Serve content from public/static under /static
-app.use('/static', express.static('public/static'));
-
-// Serve index.html
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
-
 // API SECTION
 /**
  * Manage (redirect) frontend calls to api.
  */
-app.get('/api/v1/', function(req, res) {
+app.get('/api/v1', function(req, res) {
     res.send('Simple Server!');
+});
+
+
+// SERVE WEBSERVER CONTENT
+// Serve content from public/static under /static
+app.use('/static', express.static('public/static'));
+
+// Serve index.html
+app.get('/*', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 
