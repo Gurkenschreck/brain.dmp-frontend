@@ -9,27 +9,27 @@ class MainNavigation extends Component {
             <header id="mainheader" className="mainheader">
                 <ul className="mainheader__menu" >
                     <li className="mainheader__item">
-                        <Link to="/">
+                        <Link className="mainheader__itemlink" to="/">
                             Start
                         </Link>
                     </li>
                     <li className="mainheader__item">
-                        <Link to="/dumps" activeClassName="mainheader__item--active">
+                        <Link to="/dumps" className="mainheader__itemlink" activeClassName="mainheader__item--active">
                             Dumps
                         </Link>
                     </li>
                     <li className="mainheader__item">
-                        <Link to="/questions" activeClassName="mainheader__item--active">
+                        <Link to="/questions" className="mainheader__itemlink" activeClassName="mainheader__item--active">
                             Questions
                         </Link>
                     </li>
                     <li className="mainheader__item">
-                        <Link to="/posters" activeClassName="mainheader__item--active">
+                        <Link to="/posters" className="mainheader__itemlink" activeClassName="mainheader__item--active">
                             Posters
                         </Link>
                     </li>
                     <li className="mainheader__item">
-                        <Link to="/account" activeClassName="mainheader__item--active">
+                        <Link to="/account" className="mainheader__itemlink" activeClassName="mainheader__item--active">
                             Account
                         </Link>
                     </li>

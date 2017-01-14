@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 
 import MainNavigation from './TopNav/MainNavigation.js';
+require('./App.css');
 
 class App extends Component {
     render() {
         return (
-            <div>
+            <div id="app" className="app">
                 <MainNavigation />
-                <main>
-                    Hellooo
+                <main className="app__main">
+                    Main Content
                 </main>
-                <footer>
+                <footer className="app__footer">
                     Some disclaimer/info footer with links
                 </footer>
             </div>

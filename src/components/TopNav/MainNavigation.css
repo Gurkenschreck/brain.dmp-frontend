@@ -6,14 +6,27 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .mainheader__item {
-    display: inline;
+    float: left;
+}
+
+.mainheader__itemlink {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .mainheader__item:hover {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0, 0, 0, 0.20)
 }
 
 .mainheader__item--active {
