@@ -9,7 +9,7 @@ class App extends Component {
             <div id="app" className="app">
                 <MainNavigation />
                 <main className="app__main">
-                    Main Content
+                    {this.props.children}
                 </main>
                 <footer className="app__footer">
                     Some disclaimer/info footer with links

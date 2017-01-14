@@ -7,8 +7,8 @@ describe('<App /> component', () => {
             enzymeWrapper.find('header').text()
         ).toEqual('StartDumpsQuestionsPostersAccount');
         expect(
-            enzymeWrapper.find('main').text()
-        ).toEqual('Main Content');
+            enzymeWrapper.find('main').length
+        ).toEqual(1);
         expect(
             enzymeWrapper.find('footer').text()
         ).toEqual('Some disclaimer/info footer with links');
