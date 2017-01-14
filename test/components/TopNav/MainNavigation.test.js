@@ -9,6 +9,6 @@ describe('<MainNavigation /> component', () => {
         ).toEqual(1);
         expect(
             enzymeWrapper.find('li').length
-        ).toEqual(4);
+        ).toEqual(5);
     })
 });

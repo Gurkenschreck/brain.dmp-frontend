@@ -9,7 +9,7 @@ class MainNavigation extends Component {
             <header id="mainheader" className="mainheader">
                 <ul className="mainheader__menu" >
                     <li className="mainheader__item">
-                        <Link to="/home" activeClassName="mainheader__item--active">
+                        <Link to="/">
                             Start
                         </Link>
                     </li>
@@ -21,6 +21,11 @@ class MainNavigation extends Component {
                     <li className="mainheader__item">
                         <Link to="/questions" activeClassName="mainheader__item--active">
                             Questions
+                        </Link>
+                    </li>
+                    <li className="mainheader__item">
+                        <Link to="/posters" activeClassName="mainheader__item--active">
+                            Posters
                         </Link>
                     </li>
                     <li className="mainheader__item">

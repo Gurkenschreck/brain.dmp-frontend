@@ -5,7 +5,7 @@ import MainNavigation from './TopNav/MainNavigation.js';
 class App extends Component {
     render() {
         return (
-            <div style={{padding:0, margin:0}}>
+            <div>
                 <MainNavigation />
                 <main>
                     Hellooo

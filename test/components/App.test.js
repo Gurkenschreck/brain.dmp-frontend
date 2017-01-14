@@ -5,7 +5,7 @@ describe('<App /> component', () => {
         const enzymeWrapper = render(<App />);
         expect(
             enzymeWrapper.find('header').text()
-        ).toEqual('StartDumpsQuestionsAccount');
+        ).toEqual('StartDumpsQuestionsPostersAccount');
         expect(
             enzymeWrapper.find('main').text()
         ).toEqual('Hellooo');
