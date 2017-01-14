@@ -8,13 +8,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
-    "test:watch": "npm test -- --watch",
+    "clean-install": "rm -rf node_modules && npm install",    
     "start": "concurrently --kill-others \"npm run start:devserver\" \"node ./src/server.js\"",
     "start:devserver": "webpack-dev-server --hot --inline",
-    "build:dev": "webpack -d --devtool source-map ./src/main.js ./dist/bundle.js",
+    "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
+    "test:watch": "npm test -- --watch",
     "dist": "WEBPACK_CONFIG='build' webpack -p && cp ./src/server.js ./dist/server.js",
-    "clean-install": "rm -rf node_modules && npm install",
+    "dist:dev": "webpack -d --devtool source-map ./src/main.js && cp ./src/server.js ./dist/server.js",    
     "eslint": "./node_modules/.bin/eslint src/"
   },
   "repository": {
