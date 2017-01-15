@@ -11,10 +11,9 @@ describe('<App /> component', () => {
         ).toEqual(1);
         expect(
             enzymeWrapper.find('footer').text()
-        ).toEqual('Some disclaimer/info footer with links');
+        ).toEqual('Footer content (links etc)');
         expect(enzymeWrapper.find('#app').length).toEqual(1);
         expect(enzymeWrapper.find('.app').length).toEqual(1);
         expect(enzymeWrapper.find('.app__main').length).toEqual(1);
-        expect(enzymeWrapper.find('.app__footer').length).toEqual(1);
     })
 });

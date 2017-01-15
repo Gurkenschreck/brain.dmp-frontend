@@ -14,7 +14,7 @@ take a look into the *Detailed Overview* section in this article.
 Interfaces marked with * may not be needed.
 ```js
 // News page
-GET     /api/v1/news                    /* Get all news */
+* GET     /api/v1/news                    /* Get all news */
 
 // Dumps page and dumps interaction
 GET     /api/v1/dumps                   /* Fetch all dumps */

@@ -1,12 +1,11 @@
 .app {
     width: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 .app__main {
     padding: 20px;
     margin-top: 30px;
-}
-
-.app_footer {
-
+    padding-bottom: 175px; /* Same height like MainFooter.css .mainfooter height */
 }
