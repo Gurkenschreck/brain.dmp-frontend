@@ -43,12 +43,12 @@ They can be run using several environment variables.
 
 ### server.js
 Command | Purpose | Default
---- | --- | --
+--- | --- | ---
 APIBASEURI | The uri of the REST web api service to talk to. | http://localhost:4713 (server-backend.js backend mock)
 PORT | The port to run on. | 4712
 
 ### server-backend.js
 
 Command | Purpose | Default
---- | --- | --
+--- | --- | ---
 BACKEND_PORT | The port to run on. | 4713
