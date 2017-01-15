@@ -12,7 +12,7 @@ class App extends Component {
                 <main className="app__main">
                     {this.props.children}
                 </main>
-                <MainFooter className="faf" />
+                <MainFooter />
             </div>
         )
     }

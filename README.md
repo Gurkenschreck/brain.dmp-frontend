@@ -9,7 +9,7 @@ communicates with the backend via HTTP REST calls.
 
 ## Documentation
 
-The folder docs/ contains several specification files.
+The folder **docs/** contains several specification files.
 
 
 ## Run it
@@ -19,7 +19,7 @@ The folder docs/ contains several specification files.
 ```
 npm start
 ```
-Runs the node express server.js and webpack-dev-server. For development, use localhost:4711.
+Runs the node express server.js and webpack-dev-server. **_For development, use localhost:4711_**.
 
 ```
 npm test
@@ -34,13 +34,21 @@ npm run dist
 Webpacks the src code and copies the server.js to dist dir.
 
 Then start server.js, it will listen on port 4712 (by default).
-server.js needs express and body-parser
+server.js requires *express* and *request*.
 
-### Environment variables
+## Environment variables
 
-The server.js can be run using several environment variables.
+There are two nodejs express servers in this project: *server.js* and *server-backend.js*.
+They can be run using several environment variables.
 
-Command | Purpose
---- | ---
-APIBASEURI | The uri of the REST web api service to talk to.
-PORT | The port to run on.
+### server.js
+Command | Purpose | Default
+--- | --- | --
+APIBASEURI | The uri of the REST web api service to talk to. | http://localhost:4713 (server-backend.js backend mock)
+PORT | The port to run on. | 4712
+
+### server-backend.js
+
+Command | Purpose | Default
+--- | --- | --
+BACKEND_PORT | The port to run on. | 4713
