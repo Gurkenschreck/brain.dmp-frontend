@@ -28,6 +28,18 @@ app.use(function (req, res, next) {
 /**
  * Manage (redirect) frontend calls to api.
  */
+app.get('/api/v1/dumps*', function(req, res) {
+    res.send(mockData.DUMPS);
+});
+
+app.get('/api/v1/questions*', function(req, res) {
+    res.send(mockData.QUESTIONS);
+});
+
+app.get('/api/v1/posters*', function(req, res) {
+    res.send(mockData.POSTERS);
+});
+
 app.get('/*', function(req, res) {
     res.send('Good pipe!');
 });

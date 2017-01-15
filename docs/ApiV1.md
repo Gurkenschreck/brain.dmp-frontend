@@ -39,15 +39,12 @@ GET     /api/v1/questions/:qId          /* Fetch a specific question */
 PATCH   /api/v1/questions/:qId          /* Update a specific question */
 DELETE  /api/v1/questions/:qId          /* Delete the question */
 
-* GET   /api/v1/questions/:dId/comments     /* Get all comments on a dump */
-POST    /api/v1/questions/:dId/comments     /* Create a new comment */
+* GET   /api/v1/questions/:dId/answers     /* Get all answer on a dump */
+POST    /api/v1/questions/:dId/answers     /* Create a new answer */
 * GET   /api/v1/questions/:dId/ratings      /* Get all relevancy ratings */
 POST    /api/v1/questions/:dId/ratings      /* Rate the relevancy of a question */
 * GET   /api/v1/questions/:dId/favorizations/* Get all posters who favorized the dump */
 POST    /api/v1/questions/:dId/favorizations/* Favorize the dump */
-* GET   /api/v1/questions/:dId/dumps        /* Get all dumps which are linked to this question */
-POST    /api/v1/questions/:dId/dumps        /* Link a new dump */
-
 
 // Posters page and posters interaction
 GET     /api/v1/posters                 /* Fetch all posters (user accounts) */

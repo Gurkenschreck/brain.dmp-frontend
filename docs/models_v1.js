@@ -1,4 +1,9 @@
 /**
+ * ERM - Entity Relationships Models
+ * 
+ * The models shown here are not the models the frontend needs.
+ * Those are described in another file. TODO: make another file
+ * 
  * PK: Primary key
  * FK: Foreign key
  * 
@@ -110,6 +115,7 @@ var favorite = {
 var user = {
     id: 32,
     username: 'Lakupapa',
+    name: 'Cool Guy',
     email: 'lokalakel@gg.wp',
     joinedOn: '20.12.2016',
     lastActivity: '25.12.2016'
