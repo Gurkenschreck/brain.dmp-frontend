@@ -62,7 +62,10 @@ var POSTERS = [{
         "href": "/api/v1/posters/1"
     }, {
         "rel": "dumps",
-        "href": "/api/v1/posters/2/dumps"
+        "href": "/api/v1/posters/1/dumps"
+    }, {
+        "rel": "questions",
+        "href": "/api/v1/posters/1/questions"
     }, {
         "rel": "followers",
         "href": "/api/v1/posters/1/followers"

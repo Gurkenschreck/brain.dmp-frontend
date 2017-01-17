@@ -52,6 +52,7 @@ GET     /api/v1/posters                 /* Fetch all posters (user accounts) */
 GET     /api/v1/posters/:pId            /* Fetch a specific poster */
 
 GET     /api/v1/posters/:pId/dumps      /* Fetch all dumps of this poster */
+GET     /api/v1/posters/:pId/questions  /* Fetch all questions of this poster */
 * GET   /api/v1/posters/:pId/followers  /* Fetch all followers */
 POST    /api/v1/posters/:pId/followers  /* Follow this poster */
 ```
