@@ -2,6 +2,7 @@ require('ignore-styles');
 
 var jsdom       = require('jsdom').jsdom,
     expect      = require('expect'),
+    expectJSX   = require('expect-jsx').default,
     nock        = require('nock'),
     React       = require('react'),
     {mount, render, shallow} = require('enzyme'),
@@ -15,6 +16,7 @@ global.navigator = {
 };
 global.window = document.defaultView;
 // TODO: setup global document for jsdom.
+expect.extend(expectJSX);
 global.expect = expect;
 global.nock = nock;
 global.React = React;

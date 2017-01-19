@@ -2,7 +2,7 @@ import {HTTPClient} from './../../src/lib/HTTPClient';
 
 
 
-describe.only('HTTPClient class', () => {
+describe('HTTPClient class', () => {
     let client;
 
     beforeEach(() => {
@@ -25,12 +25,10 @@ describe.only('HTTPClient class', () => {
         expect(() => {new HTTPClient({})}).toNotThrow('axiosConf not an object');
     });
 
-     it('should perform GET correctly', () => {
+     it.skip('should perform GET correctly', () => {
         nock('https://brain.dmp/api/v1')
             .get('/smth').reply('You are good!');
 
         const getPromise = client.get('/smth');
-
-        console.log(getPromise.state);
     });
 });

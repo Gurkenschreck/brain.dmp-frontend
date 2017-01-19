@@ -34,7 +34,7 @@ export class HTTPClient {
     }
 
     delete(url){
-        return this._axiosClient.delete(url, body);
+        return this._axiosClient.delete(url);
     }
 }
 
