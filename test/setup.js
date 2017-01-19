@@ -2,6 +2,7 @@ require('ignore-styles');
 
 var jsdom       = require('jsdom').jsdom,
     expect      = require('expect'),
+    nock        = require('nock'),
     React       = require('react'),
     {mount, render, shallow} = require('enzyme'),
     deepFreeze  = require('deep-freeze-node');
@@ -15,6 +16,7 @@ global.navigator = {
 global.window = document.defaultView;
 // TODO: setup global document for jsdom.
 global.expect = expect;
+global.nock = nock;
 global.React = React;
 global.mount = mount;
 global.render = render;

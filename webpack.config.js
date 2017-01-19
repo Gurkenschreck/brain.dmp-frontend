@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var SRC_DIR = path.resolve(__dirname, 'src');
+var SRC_DIR_MAIN_FILE = path.resolve(SRC_DIR, 'main.js');
 var DIST_DIR = path.resolve(__dirname, 'dist');
 var DIST_PUBLIC_DIR = path.resolve(DIST_DIR, 'public');
 var DIST_PUBLIC_STATIC_DIR = path.resolve(DIST_PUBLIC_DIR, 'static');
@@ -15,9 +16,9 @@ module.exports = {
         modulesDirectories: ['node_modules', 'src'],
         extensions: ['', '.js', '.jsx']
     },
-	entry: mode === 'build' ? SRC_DIR + '/main.js' : [
+	entry: mode === 'build' ? ['babel-polyfill', SRC_DIR_MAIN_FILE] : [
         /* TODO add react-hot-loader*/
-	    SRC_DIR + '/main.js'
+	    'babel-polyfill', SRC_DIR_MAIN_FILE
     ],
 	output: { 
 		path: DIST_PUBLIC_STATIC_DIR,
