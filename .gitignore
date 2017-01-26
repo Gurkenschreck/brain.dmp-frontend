@@ -5,6 +5,9 @@ dist/public/main.js.map
 dist/public/static/main.js
 dist/public/static/main.js.map
 
+# VS Code
+.vscode
+
 # Logs
 logs
 *.log
