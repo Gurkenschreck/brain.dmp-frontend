@@ -16,10 +16,7 @@ module.exports = {
         modulesDirectories: ['node_modules', 'src'],
         extensions: ['', '.js', '.jsx']
     },
-	entry: [
-        /* TODO add react-hot-loader*/
-	    'babel-polyfill', SRC_DIR_MAIN_FILE
-    ],
+	entry: ['babel-polyfill', SRC_DIR_MAIN_FILE],
 	output: { 
 		path: DIST_PUBLIC_STATIC_DIR,
 		filename: 'main.js',
@@ -38,19 +35,11 @@ module.exports = {
             }
 		]
 	},
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
-	devtool: 'source-map',
-	devServer: {
-		port: 4711,
-		inline: true,
-        hot: true,
-		publicPath: '/static/',
-        contentBase: DIST_PUBLIC_DIR,
-        stats: 'errors-only',
-		historyApiFallback: {
-			index: 'index.html'
-		}
-	}
+	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				'NODE_ENV': JSON.stringify('production')
+			}
+		})
+	]
 };

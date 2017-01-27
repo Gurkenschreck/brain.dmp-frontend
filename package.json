@@ -13,7 +13,7 @@
     "start:devserver": "webpack-dev-server --hot --inline",
     "test": "mocha --recursive --compilers js:babel-core/register --require ./test/setup.js",
     "test:watch": "npm test -- --watch",
-    "dist": "WEBPACK_CONFIG='build' webpack -p && npm run cp:serverstuff",
+    "dist": "webpack -p --config webpack.prod.config.js && npm run cp:serverstuff",
     "dist:dev": "webpack -d --devtool source-map ./src/main.js && npm run cp:serverstuff",
     "eslint": "./node_modules/.bin/eslint src/",
     "cp:serverstuff": "cp ./src/server.js ./dist/server.js && cp ./src/server-backend.js ./dist/server-backend.js && cp ./src/server-mockdata.js ./dist/server-mockdata.js"
