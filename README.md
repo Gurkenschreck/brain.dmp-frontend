@@ -3,6 +3,8 @@ Frontend for brain.dmp platform.
 
 [![Build Status](http://ci.alt-l.io/buildStatus/icon?job=Build develop)](http://ci.alt-l.io/job/Build%20develop/)
 
+[Trello Board](https://trello.com/b/lDcQeumf/brain-dmp)
+
 brain.dmp is a knowledge distribution/notepad platform. This frontend 
 is based on node.js and the React view library.
 
