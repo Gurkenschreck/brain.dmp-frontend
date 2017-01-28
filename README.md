@@ -2,10 +2,10 @@
 Frontend for brain.dmp platform.
 
 brain.dmp is a knowledge distribution/notepad platform. This frontend 
-is fundamentally based on node.js and the React view library.
+is based on node.js and the React view library.
 
 This brain.dmp frontend will be developed backend agnostic. It 
-communicates with the backend via HTTP REST calls. 
+communicates with the backend via RESTful HTTP calls. 
 
 ## Documentation
 
@@ -30,6 +30,7 @@ Runs mocha tests found in test/
 
 ```
 npm run dist
+npm run dist:dev
 ```
 Webpacks the src code and copies the server.js to dist dir.
 
