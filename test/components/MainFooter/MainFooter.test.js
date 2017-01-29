@@ -1,4 +1,4 @@
-import MainFooter from './../../src/components/MainFooter/MainFooter';
+import MainFooter from './../../../src/components/MainFooter/MainFooter';
 
 describe('<MainFooter /> component', () => {
     it('should display correctly', () => {
