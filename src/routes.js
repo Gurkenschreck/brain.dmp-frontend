@@ -21,7 +21,7 @@ export default routes => (
                     <Route path=":qId" component={null} /> {/* Show a specific question */}
                 </Route>
                 <Route path="posters" component={Posterspanel}> {/* Show all registered posters*/}
-                    <Route path=":pId" component={null} /> {/* Show a specific poster */}
+                    <Route path=":username" component={null} /> {/* Show a specific poster */}
                 </Route>
                 <Route path="account" component={Accountpanel}> {/* Show current accout config*/}
                     <Route path="signUp" component={null} /> {/* Registration page*/}
