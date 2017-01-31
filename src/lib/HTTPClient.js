@@ -1,9 +1,15 @@
 import axios from 'axios';
 
+/**
+ * The HTTPClient is an utility class to make the HTTP calls
+ * to the API endpoint. It is a wrapper around 'axios' and provides
+ * several helper functions.
+ */
 export class HTTPClient {
     get axiosClient() {
         return this._axiosClient;
     }
+
     constructor(axiosConf){
         if(!axiosConf || typeof(axiosConf) !== 'object'){
             throw new Error('axiosConf not an object');
@@ -13,7 +19,7 @@ export class HTTPClient {
         );
     }
 
-    get(url, queryStringParams){
+    async get(url, queryStringParams){
         return this._axiosClient.get(url, {
             params: {
                 ...queryStringParams
@@ -21,23 +27,29 @@ export class HTTPClient {
         });
     }
 
-    post(url, body){
-        return this._axiosClient.post(url, body);
+    async post(url, body){
+        const callBody = body || {};
+        return this._axiosClient.post(url, callBody);
     }
 
-    put(url, body){
-        return this._axiosClient.put(url, body);
+    async put(url, body){
+        const callBody = body || {};        
+        return this._axiosClient.put(url, callBody);
     }
 
-    patch(url, body){
-        return this._axiosClient.patch(url, body);
+    async patch(url, body){
+        const callBody = body || {};        
+        return this._axiosClient.patch(url, callBody);
     }
 
-    delete(url){
+    async delete(url){
         return this._axiosClient.delete(url);
     }
 }
 
+/**
+ * Default instance to use containing basic settings.
+ */
 const httpClient = new HTTPClient({
     baseURL: `${window.location.origin}/api/v1/`,
     timeout: 1000,

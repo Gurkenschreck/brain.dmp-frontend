@@ -1,4 +1,6 @@
+"use strict";
 require('ignore-styles');
+require('babel-polyfill');
 
 var jsdom       = require('jsdom').jsdom,
     expect      = require('expect'),
