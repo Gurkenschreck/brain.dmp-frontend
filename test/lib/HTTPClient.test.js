@@ -1,13 +1,13 @@
 import {HTTPClient} from './../../src/lib/HTTPClient';
 
-
-
 describe('HTTPClient class', () => {
     let client;
+    const BASE_URI = 'https://brain.dmp/api/v1/';
+    deepFreeze(BASE_URI);
 
     beforeEach(() => {
         client = new HTTPClient({
-            baseURL: 'https://brain.dmp/api/v1/',
+            baseURL: BASE_URI,
             timeout: 1000,
             headers: {
                 'Accept': 'application/json',
@@ -25,10 +25,29 @@ describe('HTTPClient class', () => {
         expect(() => {new HTTPClient({})}).toNotThrow('axiosConf not an object');
     });
 
-     it.skip('should perform GET correctly', () => {
-        nock('https://brain.dmp/api/v1')
-            .get('/smth').reply('You are good!');
+    it('should perform simple GET correctly', async () => {
+        const response = "You are good!";
+        nock(BASE_URI)
+            .get('/smth').reply(200, response);
 
-        const getPromise = client.get('/smth');
+        const actualResponse = await client.get('/smth');
+        expect(actualResponse).toEqual(response);
+    });
+
+    it('should perform GET with parameters correctly', async () => {
+        const request = {
+            "name": "Marx",
+            "pro": "cool"
+        }
+        const response = {
+            "name": "Karl Marx",
+            "title": "Our Lord"
+        };
+        
+        nock(BASE_URI)
+            .get('/smth?name=Marx&pro=cool').reply(200, response);
+
+        const actualResponse = await client.get('/smth', request);
+        expect(actualResponse).toEqual(response);
     });
 });

@@ -36,4 +36,7 @@ Object.keys(document.defaultView).forEach(function(property){
     }
 });
 
+// Mock XMLHttpRequest
+XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
 var documentRef = document;

@@ -6,6 +6,7 @@ import axios from 'axios';
  * several helper functions.
  */
 export class HTTPClient {
+
     get axiosClient() {
         return this._axiosClient;
     }
@@ -14,36 +15,41 @@ export class HTTPClient {
         if(!axiosConf || typeof(axiosConf) !== 'object'){
             throw new Error('axiosConf not an object');
         }
-        this._axiosClient = axios.create(
-            axiosConf
-        );
+        this._axiosClient = axios.create(axiosConf);
     }
 
     async get(url, queryStringParams){
-        return this._axiosClient.get(url, {
+        const response = await this._call('get', url, {
             params: {
                 ...queryStringParams
             }
         });
+        return response.data;
     }
 
     async post(url, body){
-        const callBody = body || {};
-        return this._axiosClient.post(url, callBody);
+        const response = await this._call('post', url, body);
+        return response.data;
     }
 
     async put(url, body){
-        const callBody = body || {};        
-        return this._axiosClient.put(url, callBody);
+        const response = await this._call('put', url, body);
+        return response.data;
     }
 
     async patch(url, body){
-        const callBody = body || {};        
-        return this._axiosClient.patch(url, callBody);
+        const response = await this._call('patch', url, body);
+        return response.data;
     }
 
     async delete(url){
-        return this._axiosClient.delete(url);
+        const response = await this._call('delete', url, body);
+        return response.data;
+    }
+
+    async _call(method, url, body){
+        const callBody = body || {};        
+        return await this._axiosClient[method](url, callBody);
     }
 }
 
