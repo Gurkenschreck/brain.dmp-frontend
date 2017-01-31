@@ -37,6 +37,12 @@ describe('HTTPClient class', () => {
         expect(() => {new HTTPClient({})}).toNotThrow('axiosConf not an object');
     });
 
+    // TODO Test empty url for error
+
+    it.skip('should fail to make call when url is not a string', () => {
+        expect(true).toEqual(false);
+    });
+
     it('should perform simple GET correctly', async () => {
         nock(BASE_URI)
             .get('/smth').reply(200, mockResponseText);

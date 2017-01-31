@@ -30,25 +30,28 @@ export class HTTPClient {
 
     async post(url, body){
         const response = await this._call('post', url, body);
-        return response.data;
+        return Promise.resolve(response.data);
     }
 
     async put(url, body){
         const response = await this._call('put', url, body);
-        return response.data;
+        return Promise.resolve(response.data);
     }
 
     async patch(url, body){
         const response = await this._call('patch', url, body);
-        return response.data;
+        return Promise.resolve(response.data);
     }
 
     async delete(url){
         const response = await this._call('delete', url);
-        return response.data;
+        return Promise.resolve(response.data);
     }
 
     async _call(method, url, body){
+        if(typeof(url) === 'undefined' || typeof(url) !== 'string'){
+            throw new Error(`HTTPClient url must be a string`);
+        }
         const callBody = body || {};        
         return await this._axiosClient[method](url, callBody);
     }
