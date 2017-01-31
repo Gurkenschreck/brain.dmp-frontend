@@ -4,6 +4,7 @@ import axios from 'axios';
  * The HTTPClient is an utility class to make the HTTP calls
  * to the API endpoint. It is a wrapper around 'axios' and provides
  * several helper functions.
+ * This class makes use of ES7 async functions.
  */
 export class HTTPClient {
 
@@ -43,7 +44,7 @@ export class HTTPClient {
     }
 
     async delete(url){
-        const response = await this._call('delete', url, body);
+        const response = await this._call('delete', url);
         return response.data;
     }
 

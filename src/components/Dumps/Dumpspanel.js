@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-class Dumpspanel extends Component {
+/**
+ * The Dumpspanel is the root component of route
+ * #/dumps.
+ * It contains the dumps filter and dumps board.
+ */
+export class Dumpspanel extends Component {
     render() {
         return (
             <div>
@@ -10,4 +16,15 @@ class Dumpspanel extends Component {
     }
 }
 
-export default Dumpspanel;
+const mapStateToProps = (state, ownProps) => {
+    return {
+    }
+}
+
+const mapDispatchToProps = (state, ownProps) => {
+    return {
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dumpspanel);

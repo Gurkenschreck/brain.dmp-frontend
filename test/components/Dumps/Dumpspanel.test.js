@@ -1,4 +1,4 @@
-import Dumpspanel from './../../../src/components/Dumps/Dumpspanel';
+import {Dumpspanel} from './../../../src/components/Dumps/Dumpspanel';
 
 describe('<Dumpspanel /> component', () => {
     it('should display correctly', () => {
