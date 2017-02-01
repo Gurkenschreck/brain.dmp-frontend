@@ -49,8 +49,11 @@ export class HTTPClient {
     }
 
     async _call(method, url, body){
-        if(typeof(url) === 'undefined' || typeof(url) !== 'string'){
-            throw new Error(`HTTPClient url must be a string`);
+        if(typeof(method) === undefined || typeof(method) !== 'string' || method.length < 1){
+            throw new Error(`method must be a string`);
+        }
+        if(typeof(url) === undefined || typeof(url) !== 'string' || url.length < 1){
+            throw new Error(`url must be a string`);
         }
         const callBody = body || {};        
         return await this._axiosClient[method](url, callBody);

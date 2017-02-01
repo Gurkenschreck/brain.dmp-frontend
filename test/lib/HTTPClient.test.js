@@ -39,8 +39,33 @@ describe('HTTPClient class', () => {
 
     // TODO Test empty url for error
 
-    it.skip('should fail to make call when url is not a string', () => {
-        expect(true).toEqual(false);
+    it('should fail to make call when url is not a string', async () => {
+        nock(BASE_URI)
+            .get('/redrum').reply(200, 'REDRUM');
+        // Call function to throw an error. If not expect the worst!
+        try{
+            await client._call('get');
+            expect(true).toBeFalsy();                                    
+        }catch(e){ expect(e.message).toEqual('url must be a string'); }
+        try{
+            await client._call('get', 1);
+            expect(true).toBeFalsy();                        
+        }catch(e){ expect(e.message).toEqual('url must be a string'); }
+        try{
+            await client._call('get', {});
+            expect(true).toBeFalsy();                        
+        }catch(e){ expect(e.message).toEqual('url must be a string'); }
+        try{
+            await client._call('get', []);
+            expect(true).toBeFalsy();                        
+        }catch(e){ expect(e.message).toEqual('url must be a string'); }
+        try{
+            await client._call("get", '');
+            expect(true).toBeFalsy();                        
+        }catch(e){ expect(e.message).toEqual('url must be a string'); }
+        try{
+            await client._call("get", '/redrum');
+        }catch(e){ expect(e.message).toNotEqual('url must be a string'); }
     });
 
     it('should perform simple GET correctly', async () => {
