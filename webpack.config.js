@@ -41,8 +41,8 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
-			LOG_ENABLE: JSON.stringify(true),
-			LOG_LEVEL: 3 // 0 = none; 1 = error; 2 = warn; 3 = info
+			'LOG_ENABLE': JSON.stringify(true),
+			'LOG_LEVEL': 3 // 0 = none; 1 = error; 2 = warn; 3 = info
 		})
     ],
 	devtool: 'source-map',
