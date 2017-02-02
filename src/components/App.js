@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import MainNavigation from './TopNav/MainNavigation.js';
 import MainFooter from './MainFooter/MainFooter';
-require('./App.css');
+import './App.css';
 
 class App extends Component {
     render() {

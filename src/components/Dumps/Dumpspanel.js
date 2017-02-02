@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Log from './../../lib/Log';
 
 /**
  * The Dumpspanel is the root component of route
@@ -7,6 +8,7 @@ import {connect} from 'react-redux';
  * It contains the dumps filter and dumps board.
  */
 export class Dumpspanel extends Component {
+
     render() {
         return (
             <div>
@@ -23,7 +25,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (state, ownProps) => {
     return {
-        
     }
 }
 

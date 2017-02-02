@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE_Logger in the project root for license information.
 // ORIGINAL: https://github.com/IdentityModel/oidc-client-js (found no other source)
 
-// Modified by Mario Giugno
+// Modified by Mario Giugno. Applied (most of) the projects easlint rules.
 
-let nopLogger = {
-    info(){},
-    warn(){},
-    error(){}
+const nopLogger = {
+    warn() { },
+    info() { },
+    error() { }
 };
 
 const NONE = 0;
@@ -19,53 +19,53 @@ let logger;
 let level;
 
 export default class Log {
-    static get NONE() {return NONE};
-    static get ERROR() {return ERROR};
-    static get WARN() {return WARN};
-    static get INFO() {return INFO};
-    
+    static get NONE() { return NONE }
+    static get ERROR() { return ERROR }
+    static get WARN() { return WARN }
+    static get INFO() { return INFO }
+
     static reset(){
         level = INFO;
         logger = nopLogger;
     }
-    
+
     static get level(){
         return level;
     }
+
     static set level(value){
         if (NONE <= value && value <= INFO){
             level = value;
-        }
-        else {
+        } else {
             throw new Error("Invalid log level");
         }
     }
-    
+
     static get logger(){
         return logger;
     }
+
     static set logger(value){
         if (value.info && value.warn && value.error){
             logger = value;
-        }
-        else {
+        } else {
             throw new Error("Invalid logger");
         }
     }
-    
+
     static info(...args){
         if (level >= INFO){
-            logger.info.apply(logger, Array.from(args));
+            logger.info(...args)
         }
     }
     static warn(...args){
         if (level >= WARN){
-            logger.warn.apply(logger, Array.from(args));
+            logger.warn(...args);
         }
     }
     static error(...args){
         if (level >= ERROR){
-            logger.error.apply(logger, Array.from(args));
+            logger.error(...args)
         }
     }
 
@@ -85,6 +85,7 @@ export default class Log {
             Log.error(args);
         }
     }
+
     /* Mod end */
 }
 

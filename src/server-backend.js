@@ -1,6 +1,7 @@
 /**
  * This backend node express server provides mock data.
  */
+
 'use strict';
 
 console.log('Starting brain.dmp backend mock node server.');

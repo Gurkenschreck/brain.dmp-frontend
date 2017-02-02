@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Routes from './routes';
 
-if(typeof(LOG_ENABLE) !== undefined && LOG_ENABLE){
+if(typeof LOG_ENABLE !== 'undefined' && LOG_ENABLE){
     const Log = require('./lib/Log').default;
     Log.logger = console;
     Log.level = LOG_LEVEL || Log.INFO;

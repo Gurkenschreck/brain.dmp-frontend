@@ -49,10 +49,10 @@ export class HTTPClient {
     }
 
     async _call(method, url, body){
-        if(typeof(method) === undefined || typeof(method) !== 'string'){
+        if(typeof(method) === 'undefined' || typeof(method) !== 'string'){
             throw new Error(`method must be a string`);
         }
-        if(typeof(url) === undefined || typeof(url) !== 'string' || url.length < 1){
+        if(typeof(url) === 'undefined' || typeof(url) !== 'string' || url.length < 1){
             throw new Error(`url must be a string`);
         }
         const callBody = body || {};        

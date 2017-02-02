@@ -1,4 +1,5 @@
 "use strict";
+
 require('ignore-styles');
 require('babel-polyfill');
 

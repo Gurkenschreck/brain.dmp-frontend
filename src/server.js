@@ -1,11 +1,12 @@
 /**
  * The frontend is provided by a node express server.
- * It serves the files (html, js, images, etc) and 
+ * It serves the files (html, js, images, etc) and
  * redirects the calls to the configured backend.
- * 
+ *
  * By default, all requests to the api/v1 interface are piped
- * to the server-backend.js node server which mocks 
+ * to the server-backend.js node server which mocks
  */
+
 'use strict';
 
 console.log('Starting brain.dmp frontend node server.');

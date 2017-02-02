@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-require('./MainFooter.css');
+import './MainFooter.css';
 
 class MainFooter extends Component {
     render() {

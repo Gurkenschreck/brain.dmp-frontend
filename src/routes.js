@@ -10,9 +10,9 @@ import Accountpanel from './components/Account/Accountpanel';
 
 import NotFound from './components/status/NotFound';
 
-export default routes => (
+export default (routes) => (
     <Router history={browserHistory}>
-            <Route path="/" component={App}> 
+            <Route path="/" component={App}>
                 <IndexRoute component={Homepanel} /> {/* Show start page, news etc */}
                 <Route path="dumps" component={Dumpspanel}> {/* Show all dumps */}
                     <Route path=":dId" component={null} /> {/* Show a specific dump */}
@@ -29,6 +29,6 @@ export default routes => (
                     <Route path="signOut" component={null} /> {/* Logout page */}
                 </Route>
             </Route>
-            <Route path='*' component={NotFound} />            
+            <Route path='*' component={NotFound} />
         </Router>
 )

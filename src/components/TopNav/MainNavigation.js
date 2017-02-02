@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
 
-require('./MainNavigation.css');
+import './MainNavigation.css';
 
 class MainNavigation extends Component {
     render() {
