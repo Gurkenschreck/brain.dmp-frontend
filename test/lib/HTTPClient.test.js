@@ -15,8 +15,6 @@ describe('HTTPClient class', () => {
         "pro": "cool"
     }
 
-    
-
     beforeEach(() => {
         client = new HTTPClient({
             baseURL: BASE_URI,
@@ -36,8 +34,6 @@ describe('HTTPClient class', () => {
         expect(() => {new HTTPClient(123)}).toThrow('axiosConf not an object');
         expect(() => {new HTTPClient({})}).toNotThrow('axiosConf not an object');
     });
-
-    // TODO Test empty url for error
 
     it('should fail to make call when url is not a string', async () => {
         nock(BASE_URI)
