@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+
 import Log from './../../lib/Log';
+import Filterbar from './../shared/Filterbar';
+import './Dumpspanel.css';
 
 /**
  * The Dumpspanel is the root component of route
@@ -11,8 +14,12 @@ export class Dumpspanel extends Component {
 
     render() {
         return (
-            <div>
-                Some dumps
+            <div className="dumpspanel">
+                <Filterbar />
+                <div className="dumpspanel__main">
+                    Some dumps
+                    
+                </div>
             </div>
         );
     }
