@@ -22,7 +22,7 @@
  * title: The short title of a note
  * content: The content of the note with a max length
  *          of 1024 characters.
- * fullText: A note can contain a full text which will
+ * text: A note can contain a full text which will
  *          be shown on the note specific webpage.
  *          This text will be formatted using Markdown.
  * authorId: FK. The user(author) id (PK)

@@ -21,9 +21,10 @@ The folder **docs/** contains several specification files.
 #### Development
 
 ```
+npm install
 npm start
 ```
-Runs the node express server.js and webpack-dev-server. **_For development, use localhost:4711_**.
+Runs the node express server.js and webpack-dev-server. **_For development, use [http://localhost:4711](http://localhost:4711)_**.
 
 ```
 npm test
