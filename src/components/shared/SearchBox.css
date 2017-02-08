@@ -1,0 +1,19 @@
+.searchBox {
+    position: relative;
+    right: 0;
+    display: inline-block;
+    padding: 5px;
+    min-width: 100px;
+    background-color: rgb(94.1%, 94.1%, 94.1%);
+}
+
+.searchBox__input {
+    background-color: transparent; 
+    border:0;
+    border-bottom:solid 1px #000;
+    outline: none; /* prevents textbox highlight in chrome */
+}
+
+.searchBox__button {
+
+}

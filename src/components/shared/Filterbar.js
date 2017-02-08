@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 import Log from './../../lib/Log';
 
 import ToggleButton from './ToggleButton';
+import SearchBox from './SearchBox';
 import './Filterbar.css';
 
 /**
@@ -11,25 +12,63 @@ import './Filterbar.css';
  */
 class Filterbar extends Component {
 
+    static propTypes = {
+        /* Is called when any of the filter options change */
+        onFilterChange: PropTypes.func.isRequired,
+        filterSettings: PropTypes.object.isRequired
+    }
+
     constructor(props){
         super(props);
 
-        this.filterBtnToggle = this.filterBtnToggle.bind(this);
-        Log.info(Filterbar.name, 'constructing');
+        this.state = {
+            ...props.filterSettings
+        }
+
+        this._filterBtnToggle = this._filterBtnToggle.bind(this);
+        this._onSearchClick = this._onSearchClick.bind(this);
+        this._filterChanged = this._filterChanged.bind(this);
+        Log.info(Filterbar.name, 'constructed');
     }
 
-    filterBtnToggle(id, newToggleState, event) {
+    shouldComponentUpdate(nextprops, nextState) {
+        if(JSON.stringify(this.state) !== JSON.stringify(nextState)) {
+            Log.info(Filterbar.name, 'the filter changed. Calling update.');
+            this._filterChanged(nextState);            
+            return true;
+        }
+        return false;
+    }
+
+    _filterBtnToggle(id, newToggleState, event) {
         Log.warnIf(typeof id === 'undefined',
                     Filterbar.name, 'filterBtnToggle id empty');
-        Log.info(Filterbar.name, 'filterBtnToggle callback', id, newToggleState);
+        const stateChange = JSON.parse(JSON.stringify(this.state));
+        stateChange[id] = newToggleState;
+        this.setState(stateChange);
+    }
+
+    _onSearchClick(searchText) {
+        this.setState({
+            searchText
+        });
+    }
+
+    _filterChanged(newFilterSettings) {
+        this.props.onFilterChange(newFilterSettings);
     }
 
     render() {
         return (
             <div className="filterbar">
                 <ToggleButton id="mineFilterBtn"
-                    title="Mine" onToggle={this.filterBtnToggle} />
-                3 Filter buttons Textbox with search function
+                    title="Mine" onToggle={this._filterBtnToggle} isActive={this.state.mineFilterBtn}/>
+                <ToggleButton id="subscribedFilterBtn"
+                    title="Subscribed" onToggle={this._filterBtnToggle} isActive={this.state.subscribedFilterBtn} />
+                <ToggleButton id="publicFilterBtn"
+                    title="Others" onToggle={this._filterBtnToggle} isActive={this.state.publicFilterBtn} />
+                <SearchBox onSearchClick={this._onSearchClick} 
+                    searchTextPlaceholder="Title, text, tags..." />
             </div>
         );
     }

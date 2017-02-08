@@ -12,13 +12,36 @@ import './Dumpspanel.css';
  */
 export class Dumpspanel extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            filterSettings: {
+                subscribedFilterBtn: true,
+                searchText: '',
+                publicFilterBtn: false,
+                mineFilterBtn: true
+            }
+        }
+
+        this._onFilterSettingsChange = this._onFilterSettingsChange.bind(this);
+         Log.info(Dumpspanel.name, 'constructed');
+    }
+
+    _onFilterSettingsChange(filterObj) {
+        Log.info(Dumpspanel.name,
+            `the filter settings have changed.`,
+            `New: ${JSON.stringify(filterObj)}`);
+        this.setState({filterObj});
+    }
+
     render() {
         return (
             <div className="dumpspanel">
-                <Filterbar />
+                <Filterbar filterSettings={this.state.filterSettings} 
+                            onFilterChange={this._onFilterSettingsChange} />
                 <div className="dumpspanel__main">
                     Some dumps
-                    
                 </div>
             </div>
         );

@@ -1,4 +1,4 @@
-import ToggleButton from './../../../src/components/shared/ToggleButton';
+import SearchBox from './../../../src/components/shared/ToggleButton';
 
 describe('<ToggleButton /> component', () => {
 
@@ -8,7 +8,7 @@ describe('<ToggleButton /> component', () => {
 
     beforeEach(() => {
         enzymeWrapper = shallow(
-            <ToggleButton id="coolBtn"
+            <SearchBox id="coolBtn"
                     title="Yooo"
                     onToggle={() => {
                         
@@ -21,7 +21,6 @@ describe('<ToggleButton /> component', () => {
     });
 
     it('should display correctly', () => {
-        
         expect(enzymeWrapper.find('.toggleButton').exists()).toBeTruthy();
     })
 });

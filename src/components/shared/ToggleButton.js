@@ -50,8 +50,7 @@ class ToggleButton extends Component {
         const newActiveState = !this.state.isActive;
         this.setState({isActive: newActiveState});
 
-        if(this.props.onToggle)
-            this.props.onToggle(this.props.id, newActiveState, event);
+        this.props.onToggle(this.props.id, newActiveState, event);
     }
 
     render() {
