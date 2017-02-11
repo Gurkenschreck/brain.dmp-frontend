@@ -25,15 +25,13 @@ class ToggleButton extends Component {
         /* If the button is disabled */
         isDisabled: PropTypes.bool,
         /* The additional style of the button when active */
-        activeStyle: PropTypes.object
+        activeStyle: PropTypes.string
     };
 
     static defaultProps = {
         isActive: false,
         disabled: false,
-        activeStyle: {
-            "border": "2px solid green"
-        }
+        activeStyle: ""
     };
 
     constructor(props) {
@@ -43,10 +41,10 @@ class ToggleButton extends Component {
             isActive: props.isActive
         }
 
-        this.onToggleButton = this.onToggleButton.bind(this);
+        this._onToggleButton = this._onToggleButton.bind(this);
     }
 
-    onToggleButton(event){
+    _onToggleButton(event){
         event.preventDefault();
         const newActiveState = !this.state.isActive;
         this.setState({isActive: newActiveState});
@@ -56,9 +54,9 @@ class ToggleButton extends Component {
 
     render() {
         return (
-            <Button onClick={this.onToggleButton}
+            <Button onClick={this._onToggleButton}
                     isDisabled={this.props.isDisabled}
-                    customStyle={this.state.isActive ? this.props.activeStyle : {}}>
+                    customStyle={this.state.isActive ? {border: "2px solid green"} : {}}>
                 {this.props.title}
             </Button>
         );

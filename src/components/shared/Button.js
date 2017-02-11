@@ -14,21 +14,21 @@ class Button extends Component {
         onClick: PropTypes.func.isRequired,
         /* If the button is disabled */
         isDisabled: PropTypes.bool,
-        /* Custom style as inline-style in addition to css .button. */
+        /* A custom css class name */
         customStyle: PropTypes.object
     }
 
     static defaultProps = {
         isDisabled: false,
-        customStyle: {}
+        customStyle: {} 
     }
 
     render() {
         return (
-            <button className="button" 
+            <button className='button'
                     onClick={this.props.onClick}
                     disabled={this.props.isDisabled}
-                    style={this.props.customStyle}>
+                    style={this.props.customStyle} >
                 {this.props.children}
             </button>
         );

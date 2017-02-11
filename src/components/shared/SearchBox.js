@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import Log from './../../lib/Log';
 
+import Textfield from './Textfield';
 import Button from './Button';
 import './SearchBox.css';
 
@@ -54,10 +55,10 @@ class SearchBox extends Component {
     render() {
         return (
             <div className="searchBox">
-                <input className="searchBox__input" 
-                        value={this.state.searchText} 
+                <Textfield value={this.state.searchText}
                         placeholder={this.props.searchTextPlaceholder}
-                        onChange={this._handleInputChange}/>
+                         customClass="searchBox__input"
+                         onChange={this._handleInputChange} />
                 <Button onClick={this._searchClick}>
                     {this.props.buttonText}
                 </Button>
