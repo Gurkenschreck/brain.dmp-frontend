@@ -1,4 +1,5 @@
 .filterbar {
     padding: 14px 16px;
     width: auto;
+    position: relative;
 }

@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import Log from './../../lib/Log';
 
+import Button from './Button';
 import './SearchBox.css';
 
 /**
@@ -25,7 +26,8 @@ class SearchBox extends Component {
     static defaultProps = {
         searchText: '',
         searchTextPlaceholder: '',
-        buttonText: 'Search'
+        buttonText: 'Search',
+        isDisabled: false
     };
 
     constructor(props) {
@@ -56,10 +58,9 @@ class SearchBox extends Component {
                         value={this.state.searchText} 
                         placeholder={this.props.searchTextPlaceholder}
                         onChange={this._handleInputChange}/>
-                <button className="searchBox__button"
-                         onClick={this._searchClick}>
+                <Button onClick={this._searchClick}>
                     {this.props.buttonText}
-                </button>
+                </Button>
             </div>
         );
     }

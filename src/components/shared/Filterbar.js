@@ -9,6 +9,10 @@ import './Filterbar.css';
 /**
  * The Filterbar represents a bar-like component with 3
  * toggleable buttons and a search function.
+ * 
+ * Other react components can be placed inside of it.
+ * The children will be rendered between the filter
+ * buttons and the search function.
  */
 class Filterbar extends Component {
 
@@ -41,8 +45,6 @@ class Filterbar extends Component {
     }
 
     _filterBtnToggle(id, newToggleState, event) {
-        Log.warnIf(typeof id === 'undefined',
-                    Filterbar.name, 'filterBtnToggle id empty');
         const stateChange = JSON.parse(JSON.stringify(this.state));
         stateChange[id] = newToggleState;
         this.setState(stateChange);
@@ -67,6 +69,7 @@ class Filterbar extends Component {
                     title="Subscribed" onToggle={this._filterBtnToggle} isActive={this.state.subscribedFilterBtn} />
                 <ToggleButton id="publicFilterBtn"
                     title="Others" onToggle={this._filterBtnToggle} isActive={this.state.publicFilterBtn} />
+                {this.props.children}
                 <SearchBox onSearchClick={this._onSearchClick} 
                     searchTextPlaceholder="Title, text, tags..." />
             </div>

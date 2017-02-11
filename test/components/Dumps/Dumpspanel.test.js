@@ -22,7 +22,9 @@ describe('<Dumpspanel /> component', () => {
         expect(enzymeWrapper.find('.dumpspanel').exists()).toBeTruthy();
         expect(enzymeWrapper.getNode()).toIncludeJSX(
             <Filterbar filterSettings={filterSettings}
-                        onFilterChange={() => {}}/>
+                        onFilterChange={() => {}}>
+                        b
+            </Filterbar>
         );
         expect(enzymeWrapper.getNode()).toIncludeJSX(
             <div className="dumpspanel__main">

@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 
 import Log from './../../lib/Log';
-
+import Button from './Button';
+import './Button.css';
 import './ToggleButton.css';
 
 /**
@@ -22,7 +23,7 @@ class ToggleButton extends Component {
         /* If the button is already active */
         isActive: PropTypes.bool,
         /* If the button is disabled */
-        disabled: PropTypes.bool,
+        isDisabled: PropTypes.bool,
         /* The additional style of the button when active */
         activeStyle: PropTypes.object
     };
@@ -55,12 +56,11 @@ class ToggleButton extends Component {
 
     render() {
         return (
-            <button className="toggleButton" 
-                    onClick={this.onToggleButton}
-                    disabled={this.props.disabled}
-                    style={this.state.isActive ? this.props.activeStyle : {}}>
+            <Button onClick={this.onToggleButton}
+                    isDisabled={this.props.isDisabled}
+                    customStyle={this.state.isActive ? this.props.activeStyle : {}}>
                 {this.props.title}
-            </button>
+            </Button>
         );
     }
 }

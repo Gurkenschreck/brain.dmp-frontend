@@ -1,4 +1,5 @@
-import SearchBox from './../../../src/components/shared/ToggleButton';
+import ToggleButton from './../../../src/components/shared/ToggleButton';
+import Button from './../../../src/components/shared/Button';
 
 describe('<ToggleButton /> component', () => {
 
@@ -8,11 +9,10 @@ describe('<ToggleButton /> component', () => {
 
     beforeEach(() => {
         enzymeWrapper = shallow(
-            <SearchBox id="coolBtn"
+            <ToggleButton id="coolBtn"
                     title="Yooo"
-                    onToggle={() => {
-                        
-                    }} />
+                    onToggle={() => {}}
+                    activeStyle={{'backgroundColor': 'black'}} />
         );
     });
 
@@ -21,6 +21,11 @@ describe('<ToggleButton /> component', () => {
     });
 
     it('should display correctly', () => {
-        expect(enzymeWrapper.find('.toggleButton').exists()).toBeTruthy();
+        expect(enzymeWrapper.getNode()).toIncludeJSX(
+            <Button onClick={() => {}}
+                    customStyle={{}}>
+                Yooo
+            </Button>
+        );
     })
 });

@@ -39,7 +39,9 @@ export class Dumpspanel extends Component {
         return (
             <div className="dumpspanel">
                 <Filterbar filterSettings={this.state.filterSettings} 
-                            onFilterChange={this._onFilterSettingsChange} />
+                            onFilterChange={this._onFilterSettingsChange}>
+                    b
+                </Filterbar>
                 <div className="dumpspanel__main">
                     Some dumps
                 </div>
