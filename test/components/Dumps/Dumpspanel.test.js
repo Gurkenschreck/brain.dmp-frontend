@@ -10,7 +10,8 @@ describe('<Dumpspanel /> component', () => {
         subscribedFilterBtn: true,
         searchText: '',
         publicFilterBtn: false,
-        mineFilterBtn: true
+        mineFilterBtn: true,
+
     }
     deepFreeze(filterSettings);
 
@@ -23,7 +24,6 @@ describe('<Dumpspanel /> component', () => {
         expect(enzymeWrapper.getNode()).toIncludeJSX(
             <Filterbar filterSettings={filterSettings}
                         onFilterChange={() => {}}>
-                        b
             </Filterbar>
         );
         expect(enzymeWrapper.getNode()).toIncludeJSX(

@@ -1,12 +1,16 @@
 
 var DUMPS = [{
-    "id": "1",
+    "id": 1,
     "title": "Somecool note about dolphins",
     "content": "Dolphins are pretty cool m8.",
     "text": "More Information about it.",
-    "medianRating": "4.3",
+    "medianRating": 4.3,
+    "ratingCount": 4,
     "authorName": "Ken Kenson",
     "createdOn": "24.12.2016",
+    "tags": [
+        "dolphins"
+    ],
     "links": [{
         "rel": "self",
         "href": "/api/v1/dumps/1"

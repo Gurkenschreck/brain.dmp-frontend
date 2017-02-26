@@ -55,6 +55,12 @@ module.exports = {
         stats: 'errors-only',
 		historyApiFallback: {
 			index: 'index.html'
+		},
+		proxy: {
+			'/api': {
+				target: 'http://localhost:4712',
+				secure: false
+			}
 		}
 	}
 };

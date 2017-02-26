@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
  */
 app.get('/api/v1', function(req, res) {
     res.send({
-        api_base_uri: apiBaseUri
+        apiBaseUri
     });
 });
 app.get('/api/v1*', function(req, res) {
