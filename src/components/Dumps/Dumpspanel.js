@@ -11,21 +11,41 @@ import './Dumpspanel.css';
  * The Dumpspanel is the root component of route
  * #/dumps.
  * It contains the dumps filter and dumps board.
+ * 
+ * The dumps panel calls fetchDumps when it is 
+ * mounted and has no dumps in it's props.
+ * fetchDumps is also called when the filter 
+ * settings have been changed.
  */
 export class Dumpspanel extends Component {
 
     static propTypes = {
-        dumps: PropTypes.array
+        /**
+         * The dumps to display.
+         */
+        dumps: PropTypes.arrayOf(PropTypes.shape({
+
+        })),
+
+        /**
+         * Is called when no dumps are passed in as a props
+         * while componentWillMount is called.
+         * It will also be called when the filter options 
+         * were changed.
+         */
+        fetchDumps: PropTypes.func,
+
+        /**
+         * The filterObj contains the settings for the
+         * Filterbar.
+         */
+        filterObj: PropTypes.object
     }
 
     static defaultProps = {
-        dumps: []
-    }
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
+        dumps: [],
+        fetchDumps: (filterObj) => {},
+        filterObj: {
             filterSettings: {
                 subscribedFilterBtn: true,
                 searchText: '',
@@ -34,26 +54,33 @@ export class Dumpspanel extends Component {
             },
             dumps: []
         }
+    }
+
+    constructor(props) {
+
+        super(props);
+
+        this.state = props.filterObj;
 
         this._onFilterSettingsChange = this._onFilterSettingsChange.bind(this);
-        this.getDumps = this.getDumps.bind(this);
         Log.info(Dumpspanel.name, 'constructed');
+
     }
 
     componentWillMount() {
 
-        this.getDumps();
+        this.fetchIfNeeded();
 
     }
 
-    async getDumps(){
+    async fetchIfNeeded() {
 
-        const dumps = await HttpClient.get('dumps');
-
-        this.setState({dumps})
-
+        if(this.props.dumps.length === 0){
+            const dumps = await this.props.fetchDumps();
+            this.setState({dumps});
+        }
+        
     }
-
 
     /**
      * Triggers every time the filter options have changed.
@@ -92,12 +119,17 @@ export class Dumpspanel extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    }
+
+    return { }
+
 }
 
 const mapDispatchToProps = (state, ownProps) => {
     return {
+        async fetchDumps() {
+            const dumps = await HttpClient.get('dumps');
+            return dumps;
+        }
     }
 }
 

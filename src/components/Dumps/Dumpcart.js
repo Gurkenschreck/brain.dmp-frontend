@@ -9,8 +9,8 @@ class Dumpcart extends Component {
             authorName: PropTypes.string.isRequired,
             createdOn: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
-            medianRating: PropTypes.string.isRequired,
-            ratingCount: PropTypes.string.isRequired,
+            medianRating: PropTypes.number.isRequired,
+            ratingCount: PropTypes.number.isRequired,
             tags: PropTypes.arrayOf(PropTypes.string),
             links: PropTypes.arrayOf(PropTypes.object)
         }).isRequired
