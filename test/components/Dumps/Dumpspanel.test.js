@@ -10,8 +10,7 @@ describe('<Dumpspanel /> component', () => {
         subscribedFilterBtn: true,
         searchText: '',
         publicFilterBtn: false,
-        mineFilterBtn: true,
-
+        mineFilterBtn: true
     }
     deepFreeze(filterSettings);
 

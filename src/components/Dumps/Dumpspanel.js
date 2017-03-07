@@ -39,20 +39,17 @@ export class Dumpspanel extends Component {
          * The filterObj contains the settings for the
          * Filterbar.
          */
-        filterObj: PropTypes.object
+        filterSettings: PropTypes.object
     }
 
     static defaultProps = {
         dumps: [],
         fetchDumps: (filterObj) => {},
-        filterObj: {
-            filterSettings: {
-                subscribedFilterBtn: true,
-                searchText: '',
-                publicFilterBtn: false,
-                mineFilterBtn: true
-            },
-            dumps: []
+        filterSettings: {
+            subscribedFilterBtn: true,
+            searchText: '',
+            publicFilterBtn: false,
+            mineFilterBtn: true
         }
     }
 
@@ -60,7 +57,10 @@ export class Dumpspanel extends Component {
 
         super(props);
 
-        this.state = props.filterObj;
+        this.state = {
+            filterSettings: props.filterSettings,
+            dumps: props.dumps
+        }
 
         this._onFilterSettingsChange = this._onFilterSettingsChange.bind(this);
         Log.info(Dumpspanel.name, 'constructed');
@@ -69,14 +69,14 @@ export class Dumpspanel extends Component {
 
     componentWillMount() {
 
-        this.fetchIfNeeded();
+        this.fetchDumpsIfNeeded();
 
     }
 
-    async fetchIfNeeded() {
+    async fetchDumpsIfNeeded() {
 
         if(this.props.dumps.length === 0){
-            const dumps = await this.props.fetchDumps();
+            const dumps = await this.props.fetchDumps(this.state.filterSettings);
             this.setState({dumps});
         }
         
@@ -125,12 +125,14 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (state, ownProps) => {
+
     return {
-        async fetchDumps() {
-            const dumps = await HttpClient.get('dumps');
+        async fetchDumps(filterSettings) {
+            const dumps = await HttpClient.get('dumps', filterSettings);
             return dumps;
         }
     }
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dumpspanel);

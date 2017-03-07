@@ -32,6 +32,10 @@ app.use(function (req, res, next) {
 // API SECTION
 /**
  * Manage (redirect) frontend calls to api.
+ * 
+ * Use req.query to obtain query string parameters
+ * parsed as an object.
+ * Use req.body to obtain the request body.
  */
 app.get('/api/v1', function(req, res) {
     res.send({
@@ -39,6 +43,7 @@ app.get('/api/v1', function(req, res) {
     });
 });
 app.get('/api/v1*', function(req, res) {
+    // console.log(req.query);
     request(apiBaseUri + req.originalUrl).pipe(res);
 });
 

@@ -28,6 +28,9 @@ app.use(function (req, res, next) {
 // API SECTION
 /**
  * Manage (redirect) frontend calls to api.
+ * 
+ * The filterObj is passed as arguments.
+ * filterObj data structure: See Dumpspanel.js
  */
 app.get('/api/v1/dumps*', function(req, res) {
     res.send(mockData.DUMPS);

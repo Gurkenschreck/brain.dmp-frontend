@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {Link} from 'react-router';
 
+/**
+ * Visual representation of a dump.
+ */
 class Dumpcart extends Component {
 
     static propTypes = {
