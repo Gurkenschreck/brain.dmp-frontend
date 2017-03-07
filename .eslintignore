@@ -1,0 +1,4 @@
+/* Ignore some source code files. */
+src/server.js
+src/server-backend.js
+src/server-mockdata.js
