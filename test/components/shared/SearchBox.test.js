@@ -5,10 +5,14 @@ import Textfield from './../../../src/components/shared/Textfield';
 describe('<SearchBox /> component', () => {
 
     let enzymeWrapper;
+    let props;
 
     beforeEach(() => {
+        props = {
+            onSearchClick: expect.createSpy()
+        }
         enzymeWrapper = shallow(
-            <SearchBox />
+            <SearchBox {...props}/>
         );
     });
 
@@ -29,5 +33,6 @@ describe('<SearchBox /> component', () => {
                         customClass='searchBox__input'
                         placeholder='' />
         );
-    })
+    });
+
 });
